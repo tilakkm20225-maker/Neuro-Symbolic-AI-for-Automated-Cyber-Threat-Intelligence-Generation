@@ -19,7 +19,7 @@ Badges:
 
 ---
 
-## 🔭 Overview
+##  Overview
 
 - Problem: Detect and classify network-level attacks in enterprise traffic captured in the ISCX-style flow CSVs. Traditional signature-based IDS systems fail to generalize to novel attack patterns and polymorphic traffic.
 - Why traditional methods fail: Signature rules and thresholding lack adaptivity and cannot capture high-dimensional feature interactions or distributional drift in modern traffic.
@@ -31,7 +31,7 @@ Keywords: `AI` · `Cybersecurity` · `RandomForest` · `Ensemble` · `Feature-En
 
 ---
 
-## 📋 Table of Contents
+##  Table of Contents
 
 1. Problem Statement  
 2. Proposed Architecture  
@@ -45,7 +45,7 @@ Keywords: `AI` · `Cybersecurity` · `RandomForest` · `Ensemble` · `Feature-En
 
 ---
 
-## 1. 🔍 Problem Statement
+## 1.  Problem Statement
 
 - "Reliable detection of unknown and evolving network attacks requires models that learn high-dimensional traffic patterns while remaining interpretable for operators."
 
@@ -65,7 +65,7 @@ Keywords: `AI` · `Cybersecurity` · `RandomForest` · `Ensemble` · `Feature-En
 
 ---
 
-## 2. 🏗️ Proposed Architecture
+## 2.  Proposed Architecture
 
 <div align="center">
 <img src="imgs/architecture.png" width="700"/>
@@ -87,9 +87,9 @@ This system ingests CSV flow exports (ISCX-style), applies domain-informed prepr
 
 ---
 
-## 3. ⚡ How It Works
+## 3.  How It Works
 
-### 🔐 Decision Logic / Workflow
+###  Decision Logic / Workflow
 
 ```
 If sample_features indicate benign thresholds
@@ -101,7 +101,7 @@ Final Decision
 
 ```
 
-### 🔄 FLOW DIAGRAM
+###  FLOW DIAGRAM
 
 ```
 Raw Data
@@ -115,7 +115,7 @@ Model 2 (Logistic Regression)
 Output
 ```
 
-### 🧮 EQUATIONS
+###  EQUATIONS
 
 ```
 Accuracy = \frac{TP + TN}{TP + TN + FP + FN}
@@ -129,11 +129,11 @@ Attention(Q, K, V) = \text{softmax}\left(\frac{QK^\top}{\sqrt{d_k}}\right)V
 
 ---
 
-## 4. 📊 Results & Metrics
+## 4.  Results & Metrics
 
 This repository contains evaluation artifacts in `results/` including a saved Random Forest (`random_forest_model.pkl`), `processed.csv`, a confusion matrix image, and feature importance plot.
 
-### 🎯 Model Comparison
+###  Model Comparison
 
 | Model | Accuracy | F1 | Notes |
 |------:|:--------:|:--:|:-----|
@@ -154,7 +154,7 @@ This repository contains evaluation artifacts in `results/` including a saved Ra
 
 ---
 
-## 5. 🗂️ Code Architecture
+## 5.  Code Architecture
 
 ```
 project/
@@ -182,9 +182,9 @@ The repository separates data, training, evaluation, and plotting. `src/preproce
 
 ---
 
-## 6. 🧩 Core Modules — Deep Dive
+## 6.  Core Modules — Deep Dive
 
-### 🧠 Preprocessing
+###  Preprocessing
 - File path: `src/preprocess.py`
 - What it does: Loads ISCX-style CSVs from `data/`, normalizes features, encodes labels and outputs `results/processed.csv`.
 - Equation:
@@ -192,7 +192,7 @@ The repository separates data, training, evaluation, and plotting. `src/preproce
   x' = \frac{x - \mu}{\sigma}
   ```
 
-### 🧠 Training (Random Forest)
+###  Training (Random Forest)
 - File path: `src/train_model.py`
 - What it does: Loads `results/processed.csv`, splits data, trains `sklearn.ensemble.RandomForestClassifier`, evaluates accuracy and classification report, saves model to `results/random_forest_model.pkl`.
 - Equation:
@@ -200,21 +200,21 @@ The repository separates data, training, evaluation, and plotting. `src/preproce
   \hat{y} = \text{argmax}_c \sum_{t=1}^T I\{h_t(x) = c\}
   ```
 
-### 🧠 Model Comparison
+###  Model Comparison
 - File path: `src/model_comparison.py`
 - What it does: Trains RF, Logistic Regression and Decision Tree on the same split and prints comparative accuracy scores.
 
-### 🧠 Feature Importance & Explainability
+###  Feature Importance & Explainability
 - File path: `src/feature_importance.py`, `src/rules.py`
 - What it does: Extracts `feature_importances_` from RF and provides simple, rule-based textual explanations via `explain_prediction()` used by `src/predict.py`.
 
-### 🧠 Prediction CLI
+###  Prediction CLI
 - File path: `src/predict.py`
 - What it does: Loads saved RF model, samples one row from `results/processed.csv` and prints prediction, confidence and an explanation.
 
 ---
 
-## 7. 🚀 Setup & Usage
+## 7.  Setup & Usage
 
 ### ⚙️ Requirements
 
@@ -225,7 +225,7 @@ The repository separates data, training, evaluation, and plotting. `src/preproce
 | Dataset | `data/MachineLearningCVE/*` (ISCX-style CSVs) |
 | Artifacts | `results/processed.csv`, `results/random_forest_model.pkl` (created by pipeline) |
 
-### 📦 Installation
+###  Installation
 
 ```bash
 git clone <REPO_URL>
@@ -237,7 +237,7 @@ pip install -r requirements.txt
 pip install pandas scikit-learn matplotlib joblib
 ```
 
-### ▶️ Run Project
+###  Run Project
 
 1. Preprocess (produce `results/processed.csv`):
 ```bash
@@ -268,7 +268,7 @@ python src/predict.py
 
 ---
 
-## 8. 📊 Implementation Results
+## 8.  Implementation Results
 
 - Training explanation: `src/train_model.py` performs an 80/20 train/test split, trains RF (n_estimators=100), evaluates using `accuracy_score`, `classification_report` and prints confusion matrix to console. The trained model is saved as `results/random_forest_model.pkl`.
 - Confusion matrix description: The confusion matrix produced by `src/plot_confusion.py` visualizes true vs predicted class counts for benign vs attack classes and is saved as `results/confusion_matrix.png`.
@@ -285,7 +285,7 @@ Include image placeholders:
 
 ---
 
-## 9. ⚠️ Limitations
+## 9.  Limitations
 
 | Paper | Prototype | Fix |
 |------:|:---------:|:---|
@@ -295,7 +295,7 @@ Include image placeholders:
 
 ---
 
-## 10. 👥 Team
+## 10.  Team
 
 | Name | USN | Email |
 |------|-----|:-----:|
@@ -305,7 +305,7 @@ Include image placeholders:
 |Aman kumar | ENG23CY0051|amangupta6299@gmail.com|
 ---
 
-## 11. 🎓 Mentor
+## 11.  Mentor
 
 Dr. Prajwalasimha S N 
 
