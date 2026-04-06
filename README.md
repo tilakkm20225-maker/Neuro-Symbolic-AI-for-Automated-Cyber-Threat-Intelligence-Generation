@@ -277,9 +277,11 @@ python src/predict.py
 Include image placeholders:
 <div align="center">
 <img src="results/confusion_matrix.png" width="600"/>
+  
 *Confusion Matrix — placeholder (actual saved image: `results/confusion_matrix.png`)*
 
 <img src="results/feature_importance.png" width="600"/>
+
 *Feature Importance — placeholder (actual saved image: `results/feature_importance.png`)*
 </div>
 
