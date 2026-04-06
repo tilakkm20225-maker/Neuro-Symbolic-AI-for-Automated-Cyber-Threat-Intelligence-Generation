@@ -299,18 +299,20 @@ Include image placeholders:
 
 | Name | USN | Email |
 |------|-----|:-----:|
-| Lead Researcher | 000001 | lead@example.org |
-| ML Engineer | 000002 | ml@example.org |
-| Data Engineer | 000003 | data@example.org |
-
-(Replace placeholders with actual team details.)
-
+| Vaishnavi Shri  | ENG23CY0046| vaishnavi18shri@gmail.com |
+| Atif Rahim  | ENG23CY0053 | atif.rahim1104@gmail.com |
+| Tilak Moger| ENG23CY0041 | tilakkm20225@gmail.com |
+|Aman kumar | ENG23CY0051|amangupta6299@gmail.com|
 ---
 
 ## 11. 🎓 Mentor
 
-Dr. Research Mentor  
-Affiliation: TTEH Research Lab  
-Email: mentor@example.org
+Dr. Prajwalasimha S N 
+
+Associate Professor: Department of Computer Science and Engineering (Cyber Security)
+
+School of Engineering, Dayananda Sagar University
+
+Email: prajwasimha.sn1@gmail.com
 
 ---
