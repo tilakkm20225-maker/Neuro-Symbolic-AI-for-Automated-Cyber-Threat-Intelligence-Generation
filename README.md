@@ -315,6 +315,8 @@ Associate Professor: Department of Computer Science and Engineering (Cyber Secur
 
 School of Engineering, Dayananda Sagar University
 
+Devarakaggalahalli, Harohalli , Kanakapura Main road , Bengaluru South, Karnataka-562112
+
 Email: prajwasimha.sn1@gmail.com
 
 ---
